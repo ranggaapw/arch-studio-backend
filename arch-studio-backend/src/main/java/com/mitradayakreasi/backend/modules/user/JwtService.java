@@ -29,4 +29,21 @@ public class JwtService {
                 .compact();
     }
 
+    // Fungsi untuk membongkar, memvalidasi, dan mengambil username dari token
+    public String validateTokenAndGetUsername(String token) {
+        try {
+            return Jwts.parser()
+                    .verifyWith(getSigningKey())
+                    .build()
+                    .parseSignedClaims(token)
+                    .getPayload()
+                    .getSubject(); // Mengembalikan username pemilik token
+        } catch (Exception e) {
+            // Jika token palsu, dimodifikasi, atau kedaluwarsa, langsung lempar error
+            throw new org.springframework.web.server.ResponseStatusException(
+                    org.springframework.http.HttpStatus.UNAUTHORIZED, "Token tidak valid atau telah kedaluwarsa"
+            );
+        }
+    }
+
 }
