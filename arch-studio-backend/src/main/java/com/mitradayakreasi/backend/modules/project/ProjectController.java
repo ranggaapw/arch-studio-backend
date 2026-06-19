@@ -29,4 +29,25 @@ public class ProjectController {
         List<Project> projects = projectService.getAll();
         return new WebResponse<>(200, "OK", projects);
     }
+
+    // Endpoint GET untuk melihat detail satu data berdasarkan ID (Bebas akses)
+    @GetMapping("/{id}")
+    public WebResponse<Project> getById(@PathVariable Long id) {
+        Project project = projectService.getById(id);
+        return new WebResponse<>(200, "OK", project);
+    }
+
+    // Endpoint PUT untuk mengedit data (Butuh Token)
+    @PutMapping("/{id}")
+    public WebResponse<Project> update(@PathVariable Long id, @RequestBody UpdateProjectRequest request) {
+        Project project = projectService.update(id, request);
+        return new WebResponse<>(200, "OK", project);
+    }
+
+    // Endpoint DELETE untuk menghapus data (Butuh Token)
+    @DeleteMapping("/{id}")
+    public WebResponse<String> delete(@PathVariable Long id) {
+        projectService.delete(id);
+        return new WebResponse<>(200, "OK", "Project berhasil dihapus");
+    }
 }

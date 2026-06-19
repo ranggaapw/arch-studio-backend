@@ -14,8 +14,8 @@ import java.util.List;
 public class Project {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID) // Otomatis membuatkan ID acak (UUID)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Otomatis membuatkan ID angka berurutan (1, 2, 3...)
+    private Long id;
 
     private String judul;
 
