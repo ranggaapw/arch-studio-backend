@@ -19,6 +19,7 @@ public class ProjectService {
         project.setDeskripsi(request.getDeskripsi());
         project.setImageUrl(request.getImageUrl());
         project.setKategori(request.getKategori());
+        project.setIsRecommended(request.getIsRecommended() != null ? request.getIsRecommended() : false);
 
         // Simpan ke PostgreSQL
         return projectRepository.save(project);
@@ -47,6 +48,7 @@ public class ProjectService {
         project.setDeskripsi(request.getDeskripsi());
         project.setImageUrl(request.getImageUrl());
         project.setKategori(request.getKategori());
+        project.setIsRecommended(request.getIsRecommended() != null ? request.getIsRecommended() : false);
 
         // 3. Simpan perubahannya ke PostgreSQL
         return projectRepository.save(project);

@@ -25,5 +25,7 @@ public class Project {
     private String imageUrl; // Untuk menyimpan link foto/gambar hasil desain
 
     @ElementCollection
-    private List<String> kategori; 
+    private List<String> kategori;
+
+    private Boolean isRecommended = false; // Menandakan apakah project ini direkomendasikan 
 }

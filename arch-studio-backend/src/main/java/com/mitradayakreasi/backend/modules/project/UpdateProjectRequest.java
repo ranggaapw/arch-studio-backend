@@ -9,4 +9,5 @@ public class UpdateProjectRequest {
     private String deskripsi;
     private String imageUrl;
     private List<String> kategori;
+    private Boolean isRecommended; // Menandakan apakah project ini direkomendasikan
 }
