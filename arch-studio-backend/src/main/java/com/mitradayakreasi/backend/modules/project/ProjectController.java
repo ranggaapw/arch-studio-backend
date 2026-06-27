@@ -7,7 +7,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/projects")
-@CrossOrigin(origins = "http://localhost:5173") // Membuka jalur khusus untuk React Vite
 public class ProjectController {
 
     private final ProjectService projectService;

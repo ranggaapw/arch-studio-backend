@@ -15,14 +15,17 @@ public class WebConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        // Perintahkan satpam untuk menjaga ketat rute API projects dan contacts
+        // Perintahkan satpam untuk menjaga ketat rute API
         registry.addInterceptor(authInterceptor)
                 .addPathPatterns(
                         "/api/projects/**",
                         "/api/contacts/**",
                         "/api/jobs/**",
                         "/api/applications/**",
-                        "/api/career/**"
+                        "/api/career/**",
+                        "/api/home/**",
+                        "/api/services/**",
+                        "/api/about/**"
                 );
     }
 }

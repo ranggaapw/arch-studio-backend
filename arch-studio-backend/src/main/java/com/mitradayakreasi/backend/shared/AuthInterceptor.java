@@ -22,6 +22,11 @@ public class AuthInterceptor implements HandlerInterceptor {
         String path = request.getRequestURI();
         String method = request.getMethod();
 
+        // 0. Skenario Bebas OPTIONS: Semua preflight request diperbolehkan
+        if ("OPTIONS".equalsIgnoreCase(method)) {
+            return true;
+        }
+
         // 1. Skenario Bebas API Project: Boleh GET (Lihat portofolio)
         if (path.startsWith("/api/projects") && "GET".equalsIgnoreCase(method)) {
             return true;
@@ -40,6 +45,15 @@ public class AuthInterceptor implements HandlerInterceptor {
             return true;
         }
         if (path.startsWith("/api/career/settings") && "GET".equalsIgnoreCase(method)) {
+            return true;
+        }
+        if (path.startsWith("/api/home") && "GET".equalsIgnoreCase(method)) {
+            return true;
+        }
+        if (path.startsWith("/api/services") && "GET".equalsIgnoreCase(method)) {
+            return true;
+        }
+        if (path.startsWith("/api/about") && "GET".equalsIgnoreCase(method)) {
             return true;
         }
 

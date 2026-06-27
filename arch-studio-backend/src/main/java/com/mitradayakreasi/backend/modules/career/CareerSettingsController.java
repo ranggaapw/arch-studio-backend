@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/career/settings")
-@CrossOrigin(origins = "*")
 public class CareerSettingsController {
 
     private final CareerSettingsService careerSettingsService;
