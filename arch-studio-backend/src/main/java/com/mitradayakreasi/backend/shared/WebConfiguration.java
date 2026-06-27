@@ -17,6 +17,12 @@ public class WebConfiguration implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         // Perintahkan satpam untuk menjaga ketat rute API projects dan contacts
         registry.addInterceptor(authInterceptor)
-                .addPathPatterns("/api/projects/**", "/api/contacts/**");
+                .addPathPatterns(
+                        "/api/projects/**",
+                        "/api/contacts/**",
+                        "/api/jobs/**",
+                        "/api/applications/**",
+                        "/api/career/**"
+                );
     }
 }

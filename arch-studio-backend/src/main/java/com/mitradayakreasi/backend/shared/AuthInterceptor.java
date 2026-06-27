@@ -32,6 +32,17 @@ public class AuthInterceptor implements HandlerInterceptor {
             return true;
         }
 
+        // 3. Skenario Bebas API Karir & Lowongan
+        if (path.startsWith("/api/jobs") && "GET".equalsIgnoreCase(method)) {
+            return true;
+        }
+        if (path.startsWith("/api/applications") && "POST".equalsIgnoreCase(method)) {
+            return true;
+        }
+        if (path.startsWith("/api/career/settings") && "GET".equalsIgnoreCase(method)) {
+            return true;
+        }
+
         // 3. Sisanya (POST/PUT/DELETE Project, dan GET Contact) WAJIB pakai Token!
         String authHeader = request.getHeader("Authorization");
         
