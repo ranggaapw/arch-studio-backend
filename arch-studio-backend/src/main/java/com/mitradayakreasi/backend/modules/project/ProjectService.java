@@ -20,6 +20,11 @@ public class ProjectService {
         project.setImageUrl(request.getImageUrl());
         project.setKategori(request.getKategori());
         project.setIsRecommended(request.getIsRecommended() != null ? request.getIsRecommended() : false);
+        project.setClientName(request.getClientName());
+        project.setLocation(request.getLocation());
+        project.setYear(request.getYear());
+        project.setMaterials(request.getMaterials());
+        project.setGalleryImages(request.getGalleryImages());
 
         // Simpan ke PostgreSQL
         return projectRepository.save(project);
@@ -49,6 +54,11 @@ public class ProjectService {
         project.setImageUrl(request.getImageUrl());
         project.setKategori(request.getKategori());
         project.setIsRecommended(request.getIsRecommended() != null ? request.getIsRecommended() : false);
+        project.setClientName(request.getClientName());
+        project.setLocation(request.getLocation());
+        project.setYear(request.getYear());
+        project.setMaterials(request.getMaterials());
+        project.setGalleryImages(request.getGalleryImages());
 
         // 3. Simpan perubahannya ke PostgreSQL
         return projectRepository.save(project);
