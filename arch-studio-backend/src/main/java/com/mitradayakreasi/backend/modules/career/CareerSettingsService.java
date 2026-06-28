@@ -19,8 +19,8 @@ public class CareerSettingsService {
                     defaultSettings.setHeroTitle("Karir di Arch Studio");
                     defaultSettings.setHeroSubtitle("Mari bergabung dengan tim kami");
                     defaultSettings.setHeroBgUrl("");
-                    defaultSettings.setPotentials("[]");
-                    defaultSettings.setCultures("[]");
+                    defaultSettings.setPotentials(new java.util.ArrayList<>());
+                    defaultSettings.setCultures(new java.util.ArrayList<>());
                     return careerSettingsRepository.save(defaultSettings);
                 });
     }
