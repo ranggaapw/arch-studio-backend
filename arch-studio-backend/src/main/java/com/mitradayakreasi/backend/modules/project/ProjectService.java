@@ -25,6 +25,7 @@ public class ProjectService {
         project.setYear(request.getYear());
         project.setMaterials(request.getMaterials());
         project.setGalleryImages(request.getGalleryImages());
+        project.setBudget(request.getBudget());
 
         // Simpan ke PostgreSQL
         return projectRepository.save(project);
@@ -59,6 +60,7 @@ public class ProjectService {
         project.setYear(request.getYear());
         project.setMaterials(request.getMaterials());
         project.setGalleryImages(request.getGalleryImages());
+        project.setBudget(request.getBudget());
 
         // 3. Simpan perubahannya ke PostgreSQL
         return projectRepository.save(project);

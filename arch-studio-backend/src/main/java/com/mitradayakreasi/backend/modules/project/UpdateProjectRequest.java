@@ -15,4 +15,5 @@ public class UpdateProjectRequest {
     private Integer year;
     private String materials;
     private List<String> galleryImages;
+    private Double budget;
 }

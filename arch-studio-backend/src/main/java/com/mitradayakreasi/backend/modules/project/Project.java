@@ -47,7 +47,18 @@ public class Project {
 
     private Boolean isRecommended = false; // Menandakan apakah project ini direkomendasikan 
 
+    @Column(name = "budget")
+    private Double budget;
+
     // Getter dan Setter untuk masing-masing field baru
+    public Double getBudget() {
+        return budget;
+    }
+
+    public void setBudget(Double budget) {
+        this.budget = budget;
+    }
+
     public String getClientName() {
         return clientName;
     }

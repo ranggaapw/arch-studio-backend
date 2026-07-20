@@ -32,6 +32,11 @@ public class AuthInterceptor implements HandlerInterceptor {
             return true;
         }
 
+        // Skenario Bebas API AHP: Boleh POST (Kalkulasi perankingan oleh visitor)
+        if (path.startsWith("/api/ahp/calculate") && "POST".equalsIgnoreCase(method)) {
+            return true;
+        }
+
         // 2. Skenario Bebas API Contact: Boleh POST (Kirim pesan dari pengunjung)
         if (path.startsWith("/api/contacts") && "POST".equalsIgnoreCase(method)) {
             return true;
